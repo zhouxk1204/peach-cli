@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-const { runCli } = require("../dist/index.js");
+import { runCli } from '../dist/index.js';
 runCli();
