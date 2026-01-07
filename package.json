@@ -1,11 +1,15 @@
 {
   "name": "peach-cli",
   "version": "0.0.1",
-  "description": "",
+  "description": "a cli",
   "main": "index.js",
   "scripts": {
     "dev": "tsdown --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsdown",
+    "release": "pnpm build && npm publish",
+    "release:patch": "npm version patch && pnpm release",
+    "release:minor": "npm version patch && pnpm minor",
+    "release:major": "npm version patch && pnpm major"
   },
   "type": "module",
   "files": [],

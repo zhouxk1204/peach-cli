@@ -2,7 +2,7 @@ import { program } from "commander";
 import picocolors from "picocolors";
 import pkg from '../../package.json';
 import { infoCommand } from "./info/index";
-import { registCommand } from "./regist-command";
+import { registerCommand } from "./register-command";
 // -v
 program
   .name('peach-cli')
@@ -17,5 +17,5 @@ program
   );
 
   
-// regist info command
-registCommand(infoCommand);
+// register info command
+registerCommand(infoCommand);
