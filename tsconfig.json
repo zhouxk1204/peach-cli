@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2019",                // 编译到 Node 12+ 可用的 JS 语法
-    "module": "commonjs",                 // Node16 ESM 模式
+    "module": "esnext",                 // Node16 ESM 模式
     "moduleResolution": "node",       // ESM 模块解析策略
     "strict": true,                      // 开启严格类型检查
     "esModuleInterop": true,             // 支持 import x from 'commonjs-module'

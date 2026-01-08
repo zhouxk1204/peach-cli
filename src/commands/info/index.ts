@@ -35,13 +35,12 @@ function getPnpmVersion(): string {
 /**
  * Creates the 'info' command for Peach CLI
  */
-export const infoCommand = (program: Command) => {
-  return program
-    .command("info")
+export const infoCommand = () => {
+  return new Command("info")
     .description("Display Peach CLI information")
     .action(() => {
       // Print gradient ASCII logo
-      consolaInstance.info(
+      consolaInstance.log(
         gradient(VICE_GRADIENT, { interpolation: "hsv" }).multiline(
           `
  ███          ███████████  ██████████   █████████     █████████  █████   █████
@@ -57,39 +56,35 @@ export const infoCommand = (program: Command) => {
       );
 
       // CLI title
-      consolaInstance.info(pc.green(pc.bold(`\n🍑 Peach CLI v${version}`)));
-      consolaInstance.info(pc.gray("------------------------\n"));
+      consolaInstance.log(pc.green(pc.bold(`\n🍑 Peach CLI v${version}`)));
+      consolaInstance.log(pc.gray("----------------------------------\n"));
 
       // System information
-      consolaInstance.info(pc.cyan("Node.js:"), pc.white(process.version));
-      consolaInstance.info(pc.cyan("Pnpm:"), pc.white(getPnpmVersion()));
-      consolaInstance.info(
+      consolaInstance.log(pc.cyan("Node.js:"), pc.white(process.version));
+      consolaInstance.log(pc.cyan("Pnpm:"), pc.white(getPnpmVersion()));
+      consolaInstance.log(
         pc.cyan("OS:"),
-        pc.white(`${os.type()} ${os.release()} (${os.arch()})\n`)
+        pc.white(`${os.type()} ${os.release()} (${os.arch()})`)
+      );
+      consolaInstance.log(
+        pc.cyan("GitHub:"),
+        pc.underline(pc.blue("https://github.com/zhouxk1204/peach-cli"))
       );
 
       // Supported frameworks
-      consolaInstance.info(pc.bold("Supported frameworks:"));
-      consolaInstance.info("  -", pc.blue("vue3"));
-      consolaInstance.info("  -", pc.blue("react"));
+      consolaInstance.log(pc.bold("\nSupported frameworks:"));
+      consolaInstance.log("  -", pc.blue("vue3"));
+      consolaInstance.log("  -", pc.blue("react"));
 
       // Supported languages
-      consolaInstance.info(pc.bold("\nSupported languages:"));
-      consolaInstance.info("  -", pc.blue("JavaScript"));
-      consolaInstance.info("  -", pc.blue("TypeScript"));
+      consolaInstance.log(pc.bold("\nSupported languages:"));
+      consolaInstance.log("  -", pc.blue("JavaScript"));
+      consolaInstance.log("  -", pc.blue("TypeScript"));
 
       // Supported styling options
-      consolaInstance.info(pc.bold("\nSupported styling options:"));
-      consolaInstance.info("  -", pc.blue("CSS"));
-      consolaInstance.info("  -", pc.blue("SCSS"));
-      consolaInstance.info("  -", pc.blue("TailwindCSS"));
-
-      // Additional info
-      consolaInstance.info(pc.bold("\nMore information:"));
-      consolaInstance.info(
-        "  GitHub:",
-        pc.underline(pc.blue("https://github.com/zhouxk1204/peach-cli"))
-      );
-      consolaInstance.info("");
+      consolaInstance.log(pc.bold("\nSupported styling options:"));
+      consolaInstance.log("  -", pc.blue("CSS"));
+      consolaInstance.log("  -", pc.blue("SCSS"));
+      consolaInstance.log("  -", pc.blue("TailwindCSS"));
     });
 };
