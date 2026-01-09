@@ -37,7 +37,7 @@ export const create = () => {
         const response = await prompts({
           type: "select",
           name: "framework",
-          message: "Select a framework",
+          message: "Select a framework:",
           choices: frameworkList.map((f) => ({
             title: f,
             value: f,
@@ -53,7 +53,7 @@ export const create = () => {
         const response = await prompts({
           type: "select",
           name: "variant",
-          message: "Please select a variant",
+          message: "Select a variant:",
           choices: variantList.map((v) => ({
             title: v,
             value: v,
@@ -81,7 +81,7 @@ const installDependencies = async (projectName: string) => {
   const {shouldInstall} = await prompts({
     type: 'confirm',
     name: "shouldInstall",
-    message: "Do you want to install dependencies now?",
+    message: "Install dependencies and start now?",
     initial: true
   });
 
@@ -93,7 +93,7 @@ const installDependencies = async (projectName: string) => {
   const { packageManager } = await prompts({
     type: "select",
     name: "packageManager",
-    message: "Select a package manager",
+    message: "Select a package manager:",
     choices: [
       { title: "npm", value: "npm" },
       { title: "yarn", value: "yarn" },
@@ -109,12 +109,14 @@ const installDependencies = async (projectName: string) => {
     } else {
       await execa(packageManager, ["install"], { cwd: projectPath, stdio: "ignore" });
     }
-    spinner.succeed(pc.green("Dependencies installed successfully ✅"));
+    spinner.succeed(pc.green("Dependencies installed successfully"));
+    if (packageManager === "yarn") {
+      await execa(packageManager, ["dev"], { cwd: projectPath, stdio: "inherit" });
+    } else {
+      await execa(packageManager, ["run", "dev"], { cwd: projectPath, stdio: "inherit" });
+    }
   } catch (err) {
     spinner.fail(pc.red("Failed to install dependencies ❌"));
     console.error(err);
   }
-  consolaInstance.log(pc.green("Next steps:"));
-  consolaInstance.log(pc.green(`  cd ${projectName}`));
-  consolaInstance.log(pc.green(`  ${packageManager}run dev`));
 }
