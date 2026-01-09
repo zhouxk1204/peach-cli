@@ -1,50 +1,80 @@
-# 企业级脚手架开发
+# Peach-CLI
 
-简历：脚手架项目
-不难但很重要 投入产出比很高
-区别业务项目
+A lightweight and efficient frontend scaffolding tool.
+Quickly create project templates for **Vue, React, and Vanilla JavaScript**, with zero configuration needed.
 
-1 思路
-脚手架解决的问题
+## ✨ Features
 
-市面上的脚手架
-vue-cli
-create-vite 创建vue或react项目
+* Create projects in one command
+* Supports **Vue / React / Vanilla** project templates
+* Optional **TypeScript** support
+* Simple, clean, and production-ready project structure
+* Choose your preferred package manager (npm / yarn / pnpm)
+* Lightweight and easy to use — no learning curve
 
-=> 为何需要自己开发脚手架？
+## 🚀 Installation
 
-虽然提供的模板不错，但太通用了
-在团队中使用，需要定制化模板，引入组件库，请求库，路由库
+```bash
+npm install -g peach-cli
+```
 
-新的业务线，新的工程，在定制化模板上继续，效率更高，可以直接开发业务
+or
 
-所以需要的脚手架
+```bash
+pnpm add -g peach-cli
+```
 
-标准化项目初始化
-提高开发效率
-统一技术栈，可以提供不同的vue react
-封装自动化流程 webpack vite 如果升级的话，更新脚手架即可
-工程统一收口，便于管理
+## 🧭 Usage
 
-## 设计脚手架
+### Create a new project
 
-命令行交互
+```bash
+peach-cli create my-app
+```
 
-- 模板管理
-  - 本地模板
-  - 远程模板 git模板
+### Framework choices
 
-- 文件操作
-- 进程控制
-- 插件式的设计？比如构建工具，插件式的思想
+* Vue
+* React
+* Vanilla (pure JavaScript/TypeScript)
 
-命令行工具 commder
-prompts 轻量，比较新
+### Example interactive options
 
-giget 下载远程模板（支持promise）
+* JavaScript or TypeScript
+* npm / yarn / pnpm
+* Install dependencies automatically
+* Auto-start development server
 
-颜色插件 picocolors
+## 🛠 CLI Commands
 
-consola 日志插件
-等级
-level 0~5  低于某个level不输出
+```bash
+peach-cli -h              # Show help
+peach-cli create <name>   # Create a new project
+peach-cli --version       # Show version
+```
+
+## 📦 Supported templates
+
+| Framework | Description                           |
+| --------- | ------------------------------------- |
+| Vue       | Vue 3 + Vite starter template         |
+| React     | React + Vite starter template         |
+| Vanilla   | Pure JavaScript / TypeScript template |
+
+## 🎯 Who is it for?
+
+* Beginners learning frontend development
+* Developers who want instant project setup
+* Teaching / tutorials / demo projects
+* Anyone who prefers clean, minimal templates
+
+## 🤝 Contributing
+
+Contributions are welcome.
+Feel free to open an issue or submit a pull request.
+
+## 📄 License
+
+MIT
+
+---
