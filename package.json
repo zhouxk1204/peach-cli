@@ -8,12 +8,21 @@
     "build": "tsdown",
     "release": "pnpm build && npm publish",
     "release:patch": "npm version patch && pnpm release",
-    "release:minor": "npm version patch && pnpm minor",
-    "release:major": "npm version patch && pnpm major"
+    "release:minor": "npm version minor && pnpm release",
+    "release:major": "npm version major && pnpm release"
   },
   "type": "module",
-  "files": [],
-  "bin": "bin/peach-cli.js",
+  "files": [
+    "dist",
+    "bin",
+    "templates",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "bin": {
+    "peach": "bin/peach-cli.js"
+  },
   "keywords": [],
   "author": "zhouxk",
   "license": "MIT",

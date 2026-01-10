@@ -8,17 +8,29 @@ import { frameworkList, variantList } from "../../constants";
 import { CreateCommandOption } from "../../types/index.type";
 import { loadTemplate } from "../../utils/load";
 import { consolaInstance } from "../../utils/logger";
-import { isValidateFramework, isValidateVariant } from "../../utils/validate";
+import { isValidFramework, isValidVariant } from "../../utils/validate";
 
-export const create = () => {
+export const createProjectCommand = () => {
   return new Command("create")
-    .argument("<project-name>")
+    .argument("[project-name]")
     .option("-f, --framework <framework>", "framework")
     .option("-t, --variant <variant>", "variant")
     .option("-r, --remote <remote>", "remote template")
-    .description("create a new project")
-    .helpOption("-h, --help", "display help for command")
+    .description("Create a new project from template")
+    .helpOption("-h, --help", "Display help for a command")
     .action(async (projectName: string, option: CreateCommandOption) => {
+
+      if (!projectName) {
+        const defaultName = 'peach-project';
+        const res = await prompts({
+          type: "text",
+          name: "name",
+          message: "Project name:",
+          initial: defaultName,  
+        })
+        projectName = res.name || defaultName;
+      }
+
       let { framework, variant, remote } = option;
 
       if (remote) {
@@ -32,7 +44,7 @@ export const create = () => {
         return;
       }
 
-      if (!framework || isValidateFramework(framework)) {
+      if (!framework || !isValidFramework(framework)) {
         // 选择框架
         const response = await prompts({
           type: "select",
@@ -44,11 +56,9 @@ export const create = () => {
           })),
         });
         framework = response.framework;
-      } else {
-        consolaInstance.log(`Framework ${framework} is not supported`);
       }
 
-      if (!variant || isValidateVariant(variant)) {
+      if (!variant || !isValidVariant(variant)) {
         // 选择框架
         const response = await prompts({
           type: "select",
@@ -60,8 +70,6 @@ export const create = () => {
           })),
         });
         variant = response.variant;
-      } else {
-        consolaInstance.log(`Variant ${variant} is not supported`);
       }
 
       // 加载模板
@@ -116,7 +124,7 @@ const installDependencies = async (projectName: string) => {
       await execa(packageManager, ["run", "dev"], { cwd: projectPath, stdio: "inherit" });
     }
   } catch (err) {
-    spinner.fail(pc.red("Failed to install dependencies ❌"));
+    spinner.fail(pc.red("❌ Failed to install dependencies"));
     console.error(err);
   }
 }

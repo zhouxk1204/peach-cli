@@ -1,12 +1,14 @@
-import { createCommand, program } from "commander";
+import { program } from "commander";
 import pkg from '../../package.json';
+
+import { createProjectCommand } from "./create";
 import { infoCommand } from "./info/index";
+import { listCommand } from "./list";
 import { registerCommand } from "./register-command";
-import { create } from "./create";
 // -v
 program
-  .name('peach-cli')
-  .version(pkg.version, '-v, --version', 'Display version information')
+  .name('peach')
+  .version(pkg.version, '-v, --version', 'Show Peach CLI information')
   // .addHelpText(
   //   'beforeAll',
   //   picocolors.green('\n🍑 Peach CLI - Efficient frontend project scaffolding tool\n')
@@ -16,7 +18,7 @@ program
   //   picocolors.yellow('\nFor more information, visit https://github.com/zhouxk1204/peach-cli\n')
   // );
 
-  
 // register info command
 registerCommand(infoCommand);
-registerCommand(create);
+registerCommand(createProjectCommand);  
+registerCommand(listCommand);
