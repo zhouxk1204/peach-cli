@@ -47,12 +47,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhouxk/peach-cli.git"
+    "url": "https://github.com/zhouxk1204/create-peach.git"
   },
   "bugs": {
-    "url": "https://github.com/zhouxk/peach-cli/issues"
+    "url": "https://github.com/zhouxk1204/create-peach/issues"
   },
-  "homepage": "https://github.com/zhouxk/peach-cli#readme",
+  "homepage": "https://github.com/zhouxk1204/create-peach#readme",
   "license": "MIT",
   "packageManager": "pnpm@10.27.0",
   "devDependencies": {
