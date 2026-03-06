@@ -1,7 +1,7 @@
 {
-  "name": "peach-cli",
+  "name": "create-peach",
   "version": "0.0.1",
-  "description": "a cli",
+  "description": "A lightweight CLI tool for quickly scaffolding modern web projects with Vue, React, or Vanilla JavaScript/TypeScript templates",
   "main": "index.js",
   "scripts": {
     "dev": "tsdown --watch",
@@ -23,8 +23,36 @@
   "bin": {
     "peach": "bin/peach-cli.js"
   },
-  "keywords": [],
-  "author": "zhouxk",
+  "keywords": [
+    "cli",
+    "scaffold",
+    "scaffolding",
+    "template",
+    "boilerplate",
+    "generator",
+    "vue",
+    "react",
+    "vite",
+    "typescript",
+    "javascript",
+    "frontend",
+    "web",
+    "create-app",
+    "project-starter",
+    "peach"
+  ],
+  "author": {
+    "name": "zhouxk",
+    "email": "your-email@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhouxk/peach-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhouxk/peach-cli/issues"
+  },
+  "homepage": "https://github.com/zhouxk/peach-cli#readme",
   "license": "MIT",
   "packageManager": "pnpm@10.27.0",
   "devDependencies": {

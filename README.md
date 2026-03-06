@@ -1,4 +1,4 @@
-# Peach-CLI
+# Create-Peach
 
 A lightweight and efficient frontend scaffolding tool.
 Quickly create project templates for **Vue, React, and Vanilla JavaScript**, with zero configuration needed.
@@ -15,13 +15,13 @@ Quickly create project templates for **Vue, React, and Vanilla JavaScript**, wit
 ## 🚀 Installation
 
 ```bash
-npm install -g peach-cli
+npm install -g create-peach
 ```
 
 or
 
 ```bash
-pnpm add -g peach-cli
+pnpm add -g create-peach
 ```
 
 ## 🧭 Usage
@@ -48,9 +48,39 @@ peach create my-app
 ## 🛠 CLI Commands
 
 ```bash
-peach -h              # Show help
-peach create <name>   # Create a new project
-peach --version       # Show version
+# Show help
+peach -h
+peach --help
+
+# Show version
+peach -v
+peach --version
+
+# Create a new project (interactive mode)
+peach create
+peach create <project-name>
+
+# Create with options
+peach create my-app -f react -t typescript -s scss
+
+# Create from remote template
+peach create my-app -r <github-url>
+
+# List all available templates
+peach list
+
+# Show CLI information and system details
+peach info
+```
+
+### Create Command Options
+
+```bash
+-f, --framework <framework>   Specify framework (vue/react/vanilla)
+-t, --variant <variant>       Specify variant (javascript/typescript)
+-s, --style <style>          Specify style scheme (css/scss)
+-r, --remote <remote>        Use remote template from GitHub
+-h, --help                   Display help for command
 ```
 
 ## 📦 Supported templates
