@@ -1,5 +1,8 @@
 # Create-Peach
 
+[![Version](https://img.shields.io/npm/v/create-peach)](https://www.npmjs.com/package/create-peach)
+[![License](https://img.shields.io/github/license/zhouxk1204/create-peach)](https://github.com/zhouxk1204/create-peach/blob/main/LICENSE)
+
 A lightweight and efficient frontend scaffolding tool.
 Quickly create project templates for **Vue, React, and Vanilla JavaScript**, with zero configuration needed.
 
