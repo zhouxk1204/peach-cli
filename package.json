@@ -1,6 +1,6 @@
 {
   "name": "create-peach",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A lightweight CLI tool for quickly scaffolding modern web projects with Vue, React, or Vanilla JavaScript/TypeScript templates",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "README.md"
   ],
   "bin": {
+    "create-peach": "bin/peach-cli.js",
     "peach": "bin/peach-cli.js"
   },
   "keywords": [

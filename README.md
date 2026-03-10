@@ -3,19 +3,57 @@
 [![Version](https://img.shields.io/npm/v/create-peach)](https://www.npmjs.com/package/create-peach)
 [![License](https://img.shields.io/github/license/zhouxk1204/create-peach)](https://github.com/zhouxk1204/create-peach/blob/main/LICENSE)
 
-A lightweight and efficient frontend scaffolding tool.
+A lightweight and efficient frontend scaffolding tool.  
 Quickly create project templates for **Vue, React, and Vanilla JavaScript**, with zero configuration needed.
 
-## ✨ Features
+---
 
-* Create projects in one command
-* Supports **Vue / React / Vanilla** project templates
-* Optional **TypeScript** support
-* Simple, clean, and production-ready project structure
-* Choose your preferred package manager (npm / yarn / pnpm)
-* Lightweight and easy to use — no learning curve
+# ✨ Features
 
-## 🚀 Installation
+- Create projects in one command
+- Supports **Vue / React / Vanilla** project templates
+- Optional **TypeScript** support
+- Simple, clean, and production-ready project structure
+- Choose your preferred package manager (**npm / yarn / pnpm**)
+- Lightweight and easy to use — no learning curve
+
+---
+
+# 🚀 Quick Start (Recommended)
+
+The fastest way to create a new project is using **pnpm create**:
+
+```bash
+pnpm create peach
+````
+
+Create a project with a name:
+
+```bash
+pnpm create peach my-app
+```
+
+You can also use npm:
+
+```bash
+npm create peach@latest
+```
+
+Or yarn:
+
+```bash
+yarn create peach
+```
+
+These commands will automatically download and run the latest version of **create-peach**, so **no global installation is required**.
+
+> Works with pnpm / npm / yarn without global installation.
+
+---
+
+# 📦 Global Installation (Optional)
+
+If you prefer using a global CLI command:
 
 ```bash
 npm install -g create-peach
@@ -27,19 +65,33 @@ or
 pnpm add -g create-peach
 ```
 
-## 🧭 Usage
+Then create a project using:
+
+```bash
+peach create my-app
+```
+
+---
+
+# 🧭 Usage
 
 ### Create a new project
 
 ```bash
-peach create my-app
+pnpm create peach
+```
+
+or
+
+```bash
+pnpm create peach my-app
 ```
 
 ### Framework choices
 
 * Vue
 * React
-* Vanilla (pure JavaScript/TypeScript)
+* Vanilla (pure JavaScript / TypeScript)
 
 ### Example interactive options
 
@@ -48,7 +100,9 @@ peach create my-app
 * Install dependencies automatically
 * Auto-start development server
 
-## 🛠 CLI Commands
+---
+
+# 🛠 CLI Commands
 
 ```bash
 # Show help
@@ -76,17 +130,21 @@ peach list
 peach info
 ```
 
-### Create Command Options
+---
+
+# Create Command Options
 
 ```bash
 -f, --framework <framework>   Specify framework (vue/react/vanilla)
 -t, --variant <variant>       Specify variant (javascript/typescript)
--s, --style <style>          Specify style scheme (css/scss)
--r, --remote <remote>        Use remote template from GitHub
--h, --help                   Display help for command
+-s, --style <style>           Specify style scheme (css/scss)
+-r, --remote <remote>         Use remote template from GitHub
+-h, --help                    Display help for command
 ```
 
-## 📦 Supported templates
+---
+
+# 📦 Supported Templates
 
 | Framework | Description                           |
 | --------- | ------------------------------------- |
@@ -94,19 +152,25 @@ peach info
 | React     | React + Vite starter template         |
 | Vanilla   | Pure JavaScript / TypeScript template |
 
-## 🎯 Who is it for?
+---
+
+# 🎯 Who is it for?
 
 * Beginners learning frontend development
 * Developers who want instant project setup
 * Teaching / tutorials / demo projects
 * Anyone who prefers clean, minimal templates
 
-## 🤝 Contributing
+---
+
+# 🤝 Contributing
 
 Contributions are welcome.
 Feel free to open an issue or submit a pull request.
 
-## 📄 License
+---
+
+# 📄 License
 
 MIT
 
